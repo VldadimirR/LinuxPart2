@@ -1,0 +1,5 @@
+
+mkdir DockerContain
+nano docker-compose.yml
+docker-compose up -d
+docker ps

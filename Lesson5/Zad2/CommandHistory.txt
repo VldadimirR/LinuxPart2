@@ -1,0 +1,8 @@
+docker swarm init
+docker swarm join --token SWMTKN-1-20y34hrhr7bngyu3tq8keiw7nxt9tund52tlhe0p8j5vws3fvf-aix0q0w4xk9zpuufo71n9bl8o 192.168.1.101:2377
+docker node ls
+
+docker node update --label-add env=prod user2-VirtualBox
+docker node inspect worker user2-VirtualBox
+docker service create --name webprod1 --constraint 'node.labels.env==prod' httpd
+docker service ps webprod1
