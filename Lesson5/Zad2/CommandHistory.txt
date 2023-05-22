@@ -6,3 +6,4 @@ docker node update --label-add env=prod user2-VirtualBox
 docker node inspect worker user2-VirtualBox
 docker service create --name webprod1 --constraint 'node.labels.env==prod' httpd
 docker service ps webprod1
+
